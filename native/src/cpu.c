@@ -174,7 +174,13 @@ static void matmul(pnsn_context *ctx,const pnsn_layer *l,const float *x,float *y
 #ifdef _OPENMP
 #pragma omp parallel for num_threads(ctx->options.threads) if(ctx->options.threads>1 && rows*l->no>=128)
 #endif
+#if defined(_MSC_VER) && defined(_OPENMP)
+    /* MSVC OpenMP 2.0 requires a signed loop counter. Matmul rows are
+       bounded by PNSN_TILE (128), and validated model outputs by 384. */
+    for(int index=0;index<(int)(rows*l->no);index++) {
+#else
     for(size_t index=0;index<rows*l->no;index++) {
+#endif
         size_t t=index/l->no,o=index%l->no;
         float s=l->bias[o];
         if(ctx->bits==8) s+=(float)dot(ctx->quant+t*l->width,l->q+o*l->width,l->width)*scales[t]*l->scale[o];

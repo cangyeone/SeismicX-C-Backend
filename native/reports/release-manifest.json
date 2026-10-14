@@ -18,7 +18,7 @@
     "mlx_q8": "W8A32"
   },
   "files": {
-    ".github/workflows/native.yml": "83cc96cded805c4833cbcd41530c5cbefd2928468146c08f9ba9566aa6fbc6bf",
+    ".github/workflows/native.yml": "cf44938dba06f73f7bf1849b310ff21e6445a85c8eeaf797633df4ff6ac8492b",
     ".gitignore": "c6b7d2b569be78e7823239481daeefb9af2cc4e79e7c8587596902e263e86dbc",
     "CMakeLists.txt": "c6e00004a8f299bb0ec37edb82d2f6e8e051c4f4a0d8b540cde42fb738bf1a8e",
     "LICENSE": "0069252ae13499631724eebd685c5394f68ab4d79fa0b90652c41e226fd8797f",
@@ -133,7 +133,7 @@
     "native/reports/unet-single-cudnn-v020.json": "40fc72dde444c5fccf745e9dd4ed22ec3604ee33e5f41c1a72777cf1ff6192b3",
     "native/reports/unet-single-mlx-v020.json": "fb1fbd27f40283171abe407b1da5ed00872b480e3d956f4fc682eaa14d5b5f35",
     "native/src/cli.c": "8f054ee04302426cbd25ec915b0a1ce3a77168d66abcceec7f020e0b6f1b6d4b",
-    "native/src/cpu.c": "5c913fb6b97e44968bdc56a8ce80d8625b4bb4fd318ae7ecdf7ef513044c11af",
+    "native/src/cpu.c": "e410513515dbc887621f8c84e11cb5ba0fb910543d59e868983b411b27161869",
     "native/src/cuda.cu": "0f9381eab8e2096e8bb5ca97b614576e95e3c3f82125bde62286af24b62442da",
     "native/src/cudnn.cu": "c3b36ba25b372dc995044945b25ab820c2c69e29895f4a8a047438792ad15727",
     "native/src/heap.c": "8930542ebfa3df04845f3a065017fbce2157dedebfb2aa1fe088816e4c9b03d3",
