@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Actual single-window CPU latency, raw [3,L] input with internal preprocessing."""
 import argparse,json,platform,sys,time
 from pathlib import Path

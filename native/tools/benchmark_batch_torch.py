@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """True PyTorch CUDA batch benchmark; input/output already resident on the GPU."""
 import argparse,json,sys,time,gc,platform
 from pathlib import Path

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Optional Apple GPU backend: MLX matmul/Q8 + custom Metal LSTM + shared C NMS.
 Q8 uses the exact native int8 weights with floating point activations (W8A32).
 """

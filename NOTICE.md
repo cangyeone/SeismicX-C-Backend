@@ -22,3 +22,13 @@ Reference example SAC files are taken from the upstream public repository.
 Private training/test caches are not included. Evaluation reports publish
 aggregate statistics and reproducible commands; paths and host identifiers
 are generalized for publication.
+
+## License
+
+Copyright (C) 2026 SeismicX contributors (cangyeone).
+
+This release is distributed under the GNU General Public License, version 3
+only (`SPDX-License-Identifier: GPL-3.0-only`). The project source and included
+reference checkpoints/exported model files are covered by this release's GPLv3
+license. See [LICENSE](LICENSE) for the complete license text. Optional external
+cuDNN, CUDA and MLX dependencies retain their own licenses.

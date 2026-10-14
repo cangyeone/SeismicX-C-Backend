@@ -13,5 +13,6 @@
     "Pn",
     "Sn"
   ],
-  "quantization": "symmetric per-output-channel weights; dynamic per-row activations on C/CUDA; float state"
+  "quantization": "symmetric per-output-channel weights; dynamic per-row activations on C/CUDA; float state",
+  "license": "GPL-3.0-only"
 }

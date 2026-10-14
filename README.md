@@ -1,4 +1,6 @@
-# SeismicX-C-Backend
+# seismicx-picker-c-backend
+
+Licensed under **GPLv3 only (GPL-3.0-only)**. See [LICENSE](LICENSE).
 
 Native C inference for seismic phase picking, with FP32 and 8-bit weights, internal float64 preprocessing, exact min-heap suppression, and CMake builds.
 
@@ -73,4 +75,4 @@ with Picker('native/models/china-unet-int8.bin',
 
 CPU portability CI covers Linux/macOS/Windows and shared/static builds. CUDA and MLX were tested on the hardware listed above; other GPUs and physical ARM edge boards have not been benchmarked. For edge builds use `-DBUILD_SHARED_LIBS=OFF -DPNSN_OPENMP=OFF`, a smaller supported window such as 6144, and an explicit candidate budget.
 
-See [Chinese usage](native/README.zh.md), [model provenance](NOTICE.md), [C API](native/include/seismicx.h) and [MIT license](LICENSE).
+See [Chinese usage](native/README.zh.md), [model provenance](NOTICE.md), [C API](native/include/seismicx.h) and [GPLv3 license](LICENSE).

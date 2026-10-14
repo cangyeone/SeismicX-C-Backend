@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Export the selected cangyeone China PhaseNet-style UNet, all 10 BN fused.
 This is the nearest-neighbor upsampling architecture in models/UNet.py,
 not the original AI4EPS PhaseNet or SeisBench PhaseNet architecture.
@@ -38,7 +39,7 @@ def export(checkpoint,output,precision):
    scale=np.maximum(np.abs(weights).max(1)/127,np.finfo(np.float32).tiny)
    q=np.clip(np.rint(weights/scale[:,None]),-127,127).astype(np.int8) if precision=='int8' else weights.astype('<f4')
    f.write(struct.pack('<7I',kind,ni,no,k,stride,pad,width));f.write(scale.astype('<f4').tobytes());f.write(b.astype('<f4').tobytes());f.write(q.tobytes())
- info=dict(format='SXUNET1',architecture='China PhaseNet-style UNet / nearest neighbor upsampling',precision=precision,layers=11,fused_bn=10,phases=['Noise','P','S'],window_multiple=256,checkpoint_sha256=hashlib.sha256(Path(checkpoint).read_bytes()).hexdigest(),model_sha256=hashlib.sha256(out.read_bytes()).hexdigest(),bytes=out.stat().st_size,quantization='symmetric per-output-channel weights; CPU dynamic per-patch W8A8; float nonlinearities')
+ info=dict(format='SXUNET1',license='GPL-3.0-only',architecture='China PhaseNet-style UNet / nearest neighbor upsampling',precision=precision,layers=11,fused_bn=10,phases=['Noise','P','S'],window_multiple=256,checkpoint_sha256=hashlib.sha256(Path(checkpoint).read_bytes()).hexdigest(),model_sha256=hashlib.sha256(out.read_bytes()).hexdigest(),bytes=out.stat().st_size,quantization='symmetric per-output-channel weights; CPU dynamic per-patch W8A8; float nonlinearities')
  out.with_suffix('.json').write_text(json.dumps(info,indent=2)+'\n');print(json.dumps(info))
 if __name__=='__main__':
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--checkpoint',default=str(ROOT/'ckpt/china.unet.pt'));p.add_argument('--output',required=True);p.add_argument('--precision',choices=['fp32','int8'],default='int8');a=p.parse_args();export(a.checkpoint,a.output,a.precision)

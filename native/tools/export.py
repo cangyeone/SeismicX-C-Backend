@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Fuse all 14 BN layers and export the exact BRNNPNSN v3 graph (no runtime torch)."""
 import argparse, hashlib, json, struct, sys
 from pathlib import Path
@@ -65,7 +66,7 @@ def export(checkpoint, output, precision):
             f.write(scale.astype('<f4').tobytes())
             f.write(b.astype('<f4').tobytes())
             f.write(data.tobytes())
-    info = dict(format=1, precision=precision, fused_bn=14, layers=len(records),
+    info = dict(format=1, license='GPL-3.0-only', precision=precision, fused_bn=14, layers=len(records),
                 checkpoint_sha256=hashlib.sha256(Path(checkpoint).read_bytes()).hexdigest(),
                 model_sha256=hashlib.sha256(output.read_bytes()).hexdigest(), bytes=output.stat().st_size,
                 phases=['Noise', 'Pg', 'Sg', 'Pn', 'Sn'], quantization='symmetric per-output-channel weights; dynamic per-row activations on C/CUDA; float state')

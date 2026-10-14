@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
 /* Exercise production packing, phase decomposition and exact cuDNN integer sums.
  * Inputs are integral with max=127, making dynamic activation scale exactly one.
  * CPU oracle computes the original full transpose formula, not polyphase code. */

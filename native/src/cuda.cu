@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
 /* Own CUDA kernels: batched tensors [B,T,C], tiled im2col, one LSTM block/record. */
 #include "internal.h"
 #include <cuda_runtime.h>

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Arbitrary-length end-to-end picking including heap NMS; raw+diff optional."""
 import argparse,json,sys,time
 from pathlib import Path

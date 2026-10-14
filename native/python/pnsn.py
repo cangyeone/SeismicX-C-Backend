@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """NumPy/ctypes convenience wrapper. C deployments need neither Python nor NumPy."""
 import ctypes as ct
 import os

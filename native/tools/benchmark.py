@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """End-to-end warm median/p95 latency including preprocessing and synchronized GPU IO."""
 import argparse,json,os,platform,sys,time
 from pathlib import Path

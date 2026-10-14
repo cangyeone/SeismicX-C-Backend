@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Complete CPU raw batch to per-record min-heap picks; one actual run per precision."""
 import argparse,json,sys,time,platform
 from pathlib import Path

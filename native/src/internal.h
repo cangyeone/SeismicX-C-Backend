@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
 #ifndef PNSN_INTERNAL_H
 #define PNSN_INTERNAL_H
 #include "pnsn.h"

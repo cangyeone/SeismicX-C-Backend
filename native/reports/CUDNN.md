@@ -2,7 +2,7 @@ v0.1.3新增真实INT8卷积后端，见 [INT8与CPU报告](INT8_CPU.md)。本�
 
 # cuDNN 后端实测（v0.1.2）
 
-日期2026-10-14；remote CUDA server，RTX5090 GPU0，CUDA12.8，cuDNN9.10.2。目录 `/path/to/SeismicX-C-Backend`。复用已安装库，未安装或更换服务器软件。
+日期2026-10-14；remote CUDA server，RTX5090 GPU0，CUDA12.8，cuDNN9.10.2。目录 `/path/to/seismicx-picker-c-backend`。复用已安装库，未安装或更换服务器软件。
 
 公共 C API 不变：历史数据 `[3,N]` 用 `pick_history`，实时数据 `[B,3,L]` 用 `predict_batch` / `pick_batch`。卷积、转置卷积、池化、两个双向LSTM调用cuDNN；BN已经融合入权重，内部float64预处理及C最小堆NMS保留。Python仅为可选接口，C CLI推理无需Python或torch。
 

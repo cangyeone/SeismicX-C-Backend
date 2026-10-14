@@ -3,7 +3,7 @@
   "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
   "cpu_features": "x86 AVX2 int8 / SSE fp32",
   "threads": 1,
-  "waveform": "/path/to/SeismicX-C-Backend/native/reports/real-waveform.npy",
+  "waveform": "/path/to/seismicx-picker-c-backend/native/reports/real-waveform.npy",
   "records": [
     {
       "backend": "torch-cpu",

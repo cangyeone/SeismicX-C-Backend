@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Convert the upstream SAC example into raw E/N/Z inputs for native benchmarks."""
 import numpy as np
 from pathlib import Path

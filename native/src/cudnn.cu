@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
 /* Vendor cuDNN convolutions and bidirectional LSTM behind the public C API.
  * FP32 features are NCT; INT8-convolution features are NTC (NHWC) to avoid transposes.
  * Only preprocessing/layout/activation use small CUDA kernels.

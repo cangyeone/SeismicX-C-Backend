@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """China PhaseNet-style UNet C FP32/INT8, history/batch/boundary regression."""
 import argparse,ctypes as ct,json,sys,tempfile
 from pathlib import Path

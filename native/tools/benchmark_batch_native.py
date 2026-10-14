@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """4096 independent realtime [B,3,L] records, true native CUDA batch or CPU fallback."""
 import argparse,gc,json,sys,time,platform
 from pathlib import Path

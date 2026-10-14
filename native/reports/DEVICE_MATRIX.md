@@ -1,4 +1,4 @@
-# SeismicX-C-Backend：两个模型的设备实测（v0.2.0）
+# seismicx-picker-c-backend：两个模型的设备实测（v0.2.0）
 
 测试日期：2026-10-14。所有表格均来自实际运行，未用单条时间乘4096估算。PNSN为五类BRNNPNSN v3；China UNet为用户选定的 `china.unet.pt` 三类PhaseNet风格模型。
 

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Two official strategies: history [3,N] and realtime [B,3,L]."""
 import argparse,ctypes as ct,json,sys
 from pathlib import Path

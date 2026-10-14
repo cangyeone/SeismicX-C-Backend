@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Paired v3/native INT8 evaluation on immutable existing held-out Pg/Sg windows.
 Cache format: test.npy [N,variants,3,10240], test_labels.npy [N,variants,4].
 No cache writes, model training, or source experiment mutations.

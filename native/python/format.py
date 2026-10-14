@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Strict reader for the versioned little-endian native model container."""
 import struct
 from pathlib import Path

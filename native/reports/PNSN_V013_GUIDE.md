@@ -192,7 +192,7 @@ CUDA_VISIBLE_DEVICES=0 native/build/pnsn_cuda_cli \
   --model native/models/pnsn-int8.bin --input raw-f64.bin --output picks.csv
 ```
 
-本次远程工作目录：remote CUDA server 上的 `/path/to/SeismicX-C-Backend`。使用现有 `/path/to/cuda-12.8/bin/nvcc`、`/path/to/cmake-env/bin/cmake` 和 `/path/to/cuda-python/bin/python`。工具链和 Python 环境没有改动。默认 anaconda3 的旧 torch 不支持该服务器 SM120，验证使用现有 cu128 环境。
+本次远程工作目录：remote CUDA server 上的 `/path/to/seismicx-picker-c-backend`。使用现有 `/path/to/cuda-12.8/bin/nvcc`、`/path/to/cmake-env/bin/cmake` 和 `/path/to/cuda-python/bin/python`。工具链和 Python 环境没有改动。默认 anaconda3 的旧 torch 不支持该服务器 SM120，验证使用现有 cu128 环境。
 
 batch 4096 测量见 [reports/BATCH4096.md](BATCH4096.md)。大批吞吐不能从单窗速度推算；cuDNN 后端现已实测优于本次 PyTorch 端到端参考，自写 CUDA 仍用于独立 W8A8 对照。
 

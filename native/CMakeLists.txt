@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(SeismicX_C_Backend VERSION 0.2.0 LANGUAGES C)
+project(SeismicX_Picker_C_Backend VERSION 0.2.1 LANGUAGES C)
 option(BUILD_SHARED_LIBS "Build shared library; OFF makes a static edge library" ON)
 option(PNSN_OPENMP "Enable optional OpenMP parallelism" ON)
 option(PNSN_CUDNN "Build optional vendor cuDNN backend (CUDA SDK + cuDNN required)" OFF)

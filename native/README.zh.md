@@ -1,4 +1,4 @@
-# SeismicX-C-Backend（v0.2.0）
+# seismicx-picker-c-backend（v0.2.1）
 
 SeismicX 的 C11 震相拾取后端，支持 PNSN v3 和现有 `china.unet.pt` 中国数据 PhaseNet 风格 UNet。两套原始权重来自 [cangyeone/pnsn](https://github.com/cangyeone/pnsn)，不重新训练。CPU 推理自己实现，只依赖 C 标准库/libm；NVIDIA 使用可选 cuDNN；Apple GPU 使用可选 MLX/Metal Python 适配层。纯 C 应用推理不需要 Python、PyTorch 或其他推理框架。
 

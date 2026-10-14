@@ -13,5 +13,6 @@
   "checkpoint_sha256": "ec74a633b2c9a448089b05ab3a4ea54ef7377c2b961d1518897c89bc3e7d9b00",
   "model_sha256": "af32d225cc4174de8867026755aa2209657eaa866e806bbaf2359f36790e1fcd",
   "bytes": 692828,
-  "quantization": "symmetric per-output-channel weights; CPU dynamic per-patch W8A8; float nonlinearities"
+  "quantization": "symmetric per-output-channel weights; CPU dynamic per-patch W8A8; float nonlinearities",
+  "license": "GPL-3.0-only"
 }

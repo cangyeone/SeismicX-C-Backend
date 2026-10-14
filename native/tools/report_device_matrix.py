@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Assemble the measured device matrix from versioned raw reports, without extrapolation."""
 import json
 from pathlib import Path
@@ -67,7 +68,7 @@ for mi, model in enumerate(MODELS):
 result = dict(version='0.2.0', date='2026-10-14', batch=batch, single=single, history=history,
               interpretation='CPU one thread; GPU synchronized; FP32 and actual quantized modes separated; no extrapolated timings; hardware-specific results')
 (R / 'device-matrix.json').write_text(json.dumps(result, indent=2) + '\n')
-lines = ['# SeismicX-C-Backend：两个模型的设备实测（v0.2.0）', '',
+lines = ['# seismicx-picker-c-backend：两个模型的设备实测（v0.2.0）', '',
          '测试日期：2026-10-14。所有表格均来自实际运行，未用单条时间乘4096估算。PNSN为五类BRNNPNSN v3；China UNet为用户选定的 `china.unet.pt` 三类PhaseNet风格模型。', '',
          '## 设备、精度与口径', '',
          '- 本机：Apple M4 Max，128 GiB统一内存，macOS ARM64；CPU启用NEON/DOTPROD，MLX 0.32.3使用Metal GPU。',

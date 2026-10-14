@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Vendor cuDNN vs explicit PyTorch graph, including Q8-storage/FP32 compute."""
 import argparse,json,sys
 from pathlib import Path

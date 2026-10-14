@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
 #ifndef SEISMICX_H
 #define SEISMICX_H
 /* SeismicX C backend API. The pnsn_* ABI remains available for compatibility.

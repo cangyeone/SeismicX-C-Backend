@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Measure the complete arbitrary-length history path on a real E/N/Z trace."""
 import argparse, gc, hashlib, json, platform, sys, time
 from pathlib import Path

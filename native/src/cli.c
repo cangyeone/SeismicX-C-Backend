@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
 /* Dependency-free raw-waveform CLI. SAC/miniSEED decoding belongs to the caller. */
 #include "pnsn.h"
 #include <errno.h>

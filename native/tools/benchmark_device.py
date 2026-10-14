@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Comparable single-window latency on CPU, cuDNN or MLX (real precision labeled)."""
 import argparse,json,platform,sys,time,gc
 from pathlib import Path

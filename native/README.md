@@ -1,4 +1,4 @@
-# SeismicX-C-Backend native inference
+# seismicx-picker-c-backend native inference
 
 C11 CPU inference for PNSN v3 and the selected China PhaseNet-style UNet, with fused BatchNorm, internal float64 preprocessing, FP32/INT8 models, exact min-heap NMS and CMake shared/static builds. Optional cuDNN FP32/W8A8 and MLX/Metal W8A32 backends support the same two strategies: arbitrary history `[3,N]` and independent realtime batches `[B,3,L]`.
 

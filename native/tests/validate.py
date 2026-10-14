@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-only
 """Numerical, boundary, preprocessing and exact NMS regression checks."""
 import argparse, ctypes as ct, json, sys, time, tempfile
 from pathlib import Path
