@@ -171,13 +171,17 @@ static void matmul(pnsn_context *ctx,const pnsn_layer *l,const float *x,float *y
     if(ctx->simd==1) {dot=dot_i8_avx2;quantizer=quantize_avx2;}
 #endif
     if(ctx->bits==8) for(size_t t=0;t<rows;t++) scales[t]=quantizer(x+t*l->width,ctx->quant+t*l->width,l->width);
+#if defined(_MSC_VER) && defined(_OPENMP)
+    /* MSVC's C OpenMP parser requires the signed counter declared before
+       the directive. Rows <= PNSN_TILE (128), validated outputs <= 384. */
+    int index;
+    const int jobs=(int)(rows*l->no);
+#endif
 #ifdef _OPENMP
 #pragma omp parallel for num_threads(ctx->options.threads) if(ctx->options.threads>1 && rows*l->no>=128)
 #endif
 #if defined(_MSC_VER) && defined(_OPENMP)
-    /* MSVC OpenMP 2.0 requires a signed loop counter. Matmul rows are
-       bounded by PNSN_TILE (128), and validated model outputs by 384. */
-    for(int index=0;index<(int)(rows*l->no);index++) {
+    for(index=0;index<jobs;index++) {
 #else
     for(size_t index=0;index<rows*l->no;index++) {
 #endif
