@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "architecture": "china.unet.pt nearest-neighbor UNet, not standard PhaseNet",
+  "library": "CPU",
+  "mlx": true,
+  "tests": [
+    "10 BN fusion",
+    "fixed 256/6144/10240",
+    "history arbitrary N=0/1/2/tail",
+    "batch 3, independent records/permutation/NMS",
+    "float64 DC/int32 extrema",
+    "empty/NaN/wrong window",
+    "real waveform/raw+diff/atomic capacity"
+  ],
+  "records": [
+    {
+      "model": "fp32",
+      "length": 256,
+      "batch": 3,
+      "max_error": 1.1920928955078125e-07,
+      "mean_error": 2.594069681283173e-10,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "int8",
+      "length": 256,
+      "batch": 3,
+      "max_error": 0.00030243396759033203,
+      "mean_error": 3.978959284722805e-06,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "fp32",
+      "length": 6144,
+      "batch": 3,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 2.335433402222975e-09,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "int8",
+      "length": 6144,
+      "batch": 3,
+      "max_error": 0.00670701265335083,
+      "mean_error": 0.00010474557348061353,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "fp32",
+      "length": 10240,
+      "batch": 3,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 1.8548393931894225e-09,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "int8",
+      "length": 10240,
+      "batch": 3,
+      "max_error": 0.009256899356842041,
+      "mean_error": 9.529764793114737e-05,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "fp32",
+      "length": 256,
+      "batch": 129,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "int8",
+      "length": 256,
+      "batch": 129,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "fp32",
+      "input": "real waveform",
+      "max_error": 1.430511474609375e-06,
+      "mean_error": 4.81682516095816e-09,
+      "history_picks": 25
+    },
+    {
+      "model": "int8",
+      "input": "real waveform",
+      "max_error": 0.18080157041549683,
+      "mean_error": 0.0003243570390623063,
+      "history_picks": 27
+    }
+  ]
+}

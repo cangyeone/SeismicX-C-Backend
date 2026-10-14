@@ -1,0 +1,6 @@
+{
+  "cli_probability_max_error": 2.980232238769531e-07,
+  "history_picks": 3,
+  "standalone_cudnn_cli": "passed",
+  "history_sample_phase_match": "exact"
+}

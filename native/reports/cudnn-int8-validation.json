@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "cudnn_version": 91002,
+  "records": [
+    {
+      "oracle_max_probability_error": 2.384185791015625e-07,
+      "preprocessing_probability_drift": 0.0,
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 128,
+      "batch": 1,
+      "max_probability_error": 2.384185791015625e-07
+    },
+    {
+      "oracle_max_probability_error": 2.384185791015625e-07,
+      "preprocessing_probability_drift": 0.0,
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 128,
+      "batch": 3,
+      "max_probability_error": 2.384185791015625e-07
+    },
+    {
+      "oracle_max_probability_error": 5.960464477539062e-07,
+      "preprocessing_probability_drift": 1.1920928955078125e-07,
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 6144,
+      "batch": 1,
+      "max_probability_error": 5.960464477539062e-07
+    },
+    {
+      "oracle_max_probability_error": 1.5497207641601562e-06,
+      "preprocessing_probability_drift": 1.1920928955078125e-07,
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 6144,
+      "batch": 3,
+      "max_probability_error": 1.5497207641601562e-06
+    },
+    {
+      "oracle_max_probability_error": 1.2516975402832031e-06,
+      "preprocessing_probability_drift": 1.1920928955078125e-07,
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 10240,
+      "batch": 1,
+      "max_probability_error": 1.2516975402832031e-06
+    },
+    {
+      "oracle_max_probability_error": 1.1324882507324219e-06,
+      "preprocessing_probability_drift": 1.1920928955078125e-07,
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 10240,
+      "batch": 3,
+      "max_probability_error": 1.1324882507324219e-06
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "input": "public real waveform",
+      "batch": 3,
+      "max_probability_error": 2.86102294921875e-06
+    },
+    {
+      "model": "fp32",
+      "reference": "original unfused checkpoint",
+      "batch": 3,
+      "max_probability_error": 8.940696716308594e-07
+    },
+    {
+      "oracle_max_probability_error": 1.1920928955078125e-07,
+      "preprocessing_probability_drift": 0.0,
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "length": 128,
+      "batch": 1,
+      "max_probability_error": 1.1920928955078125e-07
+    },
+    {
+      "oracle_max_probability_error": 0.0002860426902770996,
+      "preprocessing_probability_drift": 0.0,
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "length": 128,
+      "batch": 3,
+      "max_probability_error": 0.0002860426902770996
+    },
+    {
+      "oracle_max_probability_error": 0.0016735196113586426,
+      "preprocessing_probability_drift": 0.0,
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "length": 6144,
+      "batch": 1,
+      "max_probability_error": 0.0016735196113586426
+    },
+    {
+      "oracle_max_probability_error": 0.0026811957359313965,
+      "preprocessing_probability_drift": 0.0,
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "length": 6144,
+      "batch": 3,
+      "max_probability_error": 0.0026811957359313965
+    },
+    {
+      "oracle_max_probability_error": 0.00022202730178833008,
+      "preprocessing_probability_drift": 0.0,
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "length": 10240,
+      "batch": 1,
+      "max_probability_error": 0.00022202730178833008
+    },
+    {
+      "oracle_max_probability_error": 0.002175569534301758,
+      "preprocessing_probability_drift": 0.0,
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "length": 10240,
+      "batch": 3,
+      "max_probability_error": 0.002175569534301758
+    },
+    {
+      "model": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "input": "public real waveform",
+      "batch": 3,
+      "max_probability_error": 0.0119800865650177
+    },
+    {
+      "model": "int8",
+      "reference": "original unfused checkpoint",
+      "batch": 3,
+      "max_probability_error": 0.023783385753631592
+    }
+  ]
+}

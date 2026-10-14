@@ -1,0 +1,46 @@
+{
+  "host": "M4-Max-local",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "batch": 4096,
+  "length": 10240,
+  "seed": 20261014,
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,5,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "cpu",
+      "precision": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 28.162851666042116,
+      "seconds": [
+        28.089195833017584
+      ],
+      "median_seconds": 28.089195833017584,
+      "p95_seconds": 28.089195833017584,
+      "windows_per_second": 145.82119133454637,
+      "signal_hours_per_second": 4.147802775738208,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "batch_execution": "SIMD CPU fallback processes records serially"
+    },
+    {
+      "backend": "cpu",
+      "precision": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 20.654638874984812,
+      "seconds": [
+        21.20671633305028
+      ],
+      "median_seconds": 21.20671633305028,
+      "p95_seconds": 21.20671633305028,
+      "windows_per_second": 193.14635682736315,
+      "signal_hours_per_second": 5.493940816422775,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "batch_execution": "SIMD CPU fallback processes records serially"
+    }
+  ]
+}

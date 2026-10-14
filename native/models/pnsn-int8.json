@@ -1,0 +1,17 @@
+{
+  "format": 1,
+  "precision": "int8",
+  "fused_bn": 14,
+  "layers": 25,
+  "checkpoint_sha256": "9f626e5fff4e9390c88e43c2f6230802496163b5d6eefee05e1b6ac7ccebf9e8",
+  "model_sha256": "9f3a5ccf6ebb5f63011b74c300259e9483ed8f87b9a30874e70ad8185a0f0b0c",
+  "bytes": 477012,
+  "phases": [
+    "Noise",
+    "Pg",
+    "Sg",
+    "Pn",
+    "Sn"
+  ],
+  "quantization": "symmetric per-output-channel weights; dynamic per-row activations on C/CUDA; float state"
+}

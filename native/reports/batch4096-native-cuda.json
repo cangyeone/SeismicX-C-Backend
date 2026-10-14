@@ -1,0 +1,112 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "batch": 4096,
+  "length": 10240,
+  "seed": 20261014,
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,5,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "cuda",
+      "precision": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 1.695207118988037,
+      "seconds": [
+        1.57405925297644,
+        1.5525238740374334,
+        1.5550798589829355,
+        1.5514045209856704,
+        1.5582788159954362
+      ],
+      "median_seconds": 1.5550798589829355,
+      "p95_seconds": 1.5709031655802392,
+      "windows_per_second": 2633.948331553143,
+      "signal_hours_per_second": 74.92119698640052,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "network_gpu_seconds": [
+        1.3933096923828125,
+        1.39300146484375,
+        1.39338330078125,
+        1.3931846923828124,
+        1.39310791015625
+      ],
+      "network_gpu_median_seconds": 1.3931846923828124,
+      "preprocess_gpu_seconds": [
+        0.002919647932052612,
+        0.002909759998321533,
+        0.002914463996887207,
+        0.0029099841117858887,
+        0.0029113919734954836
+      ],
+      "preprocess_gpu_median_seconds": 0.0029113919734954836,
+      "preprocess_ms": 2.9113919734954834,
+      "network_ms": 1393.10791015625,
+      "device_buffer_bytes": 6326038060
+    },
+    {
+      "backend": "cuda",
+      "precision": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 1.6395946260308847,
+      "windows_per_second": 2498.178473489852,
+      "picks": 48,
+      "repeats": 1
+    },
+    {
+      "backend": "cuda",
+      "precision": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 1.5147462710156105,
+      "seconds": [
+        1.4258399699465372,
+        1.4254076050128788,
+        1.4254813410225324,
+        1.4265395819675177,
+        1.4250979429925792
+      ],
+      "median_seconds": 1.4254813410225324,
+      "p95_seconds": 1.4263996595633217,
+      "windows_per_second": 2873.4153735480254,
+      "signal_hours_per_second": 81.73270395869939,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "network_gpu_seconds": [
+        1.265450439453125,
+        1.26609423828125,
+        1.2659041748046875,
+        1.265998291015625,
+        1.265835205078125
+      ],
+      "network_gpu_median_seconds": 1.2659041748046875,
+      "preprocess_gpu_seconds": [
+        0.002908224105834961,
+        0.0029081599712371827,
+        0.002910399913787842,
+        0.0029191040992736818,
+        0.002916224002838135
+      ],
+      "preprocess_gpu_median_seconds": 0.002910399913787842,
+      "preprocess_ms": 2.9162240028381348,
+      "network_ms": 1265.835205078125,
+      "device_buffer_bytes": 6324700300
+    },
+    {
+      "backend": "cuda",
+      "precision": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 1.5002063699648716,
+      "windows_per_second": 2730.291033290247,
+      "picks": 68,
+      "repeats": 1
+    }
+  ]
+}

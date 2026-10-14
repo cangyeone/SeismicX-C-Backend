@@ -1,0 +1,81 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "batch": 4096,
+  "length": 10240,
+  "seed": 20261014,
+  "model": "pnsn",
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,5,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "cpu",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 95.95311927597504,
+      "seconds": [
+        95.19458806701005,
+        96.17338271596236,
+        96.25419415102806
+      ],
+      "median_seconds": 96.17338271596236,
+      "p95_seconds": 96.24611300752149,
+      "windows_per_second": 42.589746604807395,
+      "signal_hours_per_second": 1.2114416812034103,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "batch_execution": "SIMD CPU fallback processes records serially",
+      "cpu_features": "x86 AVX2 int8 / SSE fp32",
+      "threads": 1
+    },
+    {
+      "backend": "cpu",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 96.27231386600761,
+      "windows_per_second": 42.54598062014836,
+      "picks": 48,
+      "repeats": 1
+    },
+    {
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 56.08219858194934,
+      "seconds": [
+        56.3004952960182,
+        55.486145163013134,
+        55.40757547499379
+      ],
+      "median_seconds": 55.486145163013134,
+      "p95_seconds": 56.21906028271769,
+      "windows_per_second": 73.82023004060443,
+      "signal_hours_per_second": 2.0997754322660813,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "batch_execution": "SIMD CPU fallback processes records serially",
+      "cpu_features": "x86 AVX2 int8 / SSE fp32",
+      "threads": 1
+    },
+    {
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 55.55025268398458,
+      "windows_per_second": 73.7350381338751,
+      "picks": 67,
+      "repeats": 1
+    }
+  ]
+}

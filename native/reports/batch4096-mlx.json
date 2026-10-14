@@ -1,0 +1,76 @@
+{
+  "host": "M4-Max-local",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "batch": 4096,
+  "length": 10240,
+  "seed": 20261014,
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,5,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "mlx",
+      "precision": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 14.153814541990869,
+      "seconds": [
+        13.779345082992222,
+        13.453425999963656,
+        13.396226167038549
+      ],
+      "median_seconds": 13.453425999963656,
+      "p95_seconds": 13.746753174689365,
+      "windows_per_second": 304.4577641420903,
+      "signal_hours_per_second": 8.660131957819457,
+      "single_vs_batch_max_error": 2.384185791015625e-07,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "peak_mlx_active_bytes": 22265754249,
+      "mlx_version": "0.32.3",
+      "batch_execution": "layerwise im2col tiles of 128 records, full B parallel Metal recurrent blocks"
+    },
+    {
+      "backend": "mlx",
+      "precision": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 13.923660125001334,
+      "windows_per_second": 294.17552304693356,
+      "picks": 48,
+      "repeats": 1
+    },
+    {
+      "backend": "mlx",
+      "precision": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 8.660599041962996,
+      "seconds": [
+        13.510257042013109,
+        13.842837375006638,
+        14.322408000007272
+      ],
+      "median_seconds": 13.842837375006638,
+      "p95_seconds": 14.274450937507208,
+      "windows_per_second": 295.8930953993119,
+      "signal_hours_per_second": 8.416514713580428,
+      "single_vs_batch_max_error": 3.5762786865234375e-07,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "peak_mlx_active_bytes": 32824290432,
+      "mlx_version": "0.32.3",
+      "batch_execution": "layerwise im2col tiles of 128 records, full B parallel Metal recurrent blocks"
+    },
+    {
+      "backend": "mlx",
+      "precision": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 16.673782375000883,
+      "windows_per_second": 245.65511938917717,
+      "picks": 63,
+      "repeats": 1
+    }
+  ]
+}

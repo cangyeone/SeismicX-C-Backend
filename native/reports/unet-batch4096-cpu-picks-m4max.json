@@ -1,0 +1,32 @@
+{
+  "host": "M4-Max-local",
+  "scope": "one complete CPU batch run per precision; includes internal preprocessing and independent C min-heap NMS; synthetic sparse candidates",
+  "records": [
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "threads": 1,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 22.715076082968153,
+      "windows_per_second": 180.3207695646327,
+      "picks": 28,
+      "repeats": 1
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "threads": 1,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 19.00043616601033,
+      "windows_per_second": 215.57399862889932,
+      "picks": 29,
+      "repeats": 1
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "backend": "cpu",
+  "host": "M4-Max-local",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "input": "upstream public three-SAC E/N/Z example, 100 Hz, [3,N] float64",
+  "scope": "complete history call: sliding windows, internal preprocessing, raw probabilities, global min-heap NMS; GPU synchronized; 2 warmups then measured repeats",
+  "records": [
+    {
+      "model": "pnsn",
+      "precision": "fp32",
+      "compute": "FP32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": 1,
+      "picks": 3,
+      "median_ms": 20.01933299470693,
+      "p95_ms": 21.292399999219924,
+      "times_ms": [
+        19.767082994803786,
+        19.885958987288177,
+        20.218499994371086,
+        20.01933299470693,
+        21.560875000432134
+      ]
+    },
+    {
+      "model": "pnsn",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": 1,
+      "picks": 3,
+      "median_ms": 15.259459032677114,
+      "p95_ms": 15.313841844908893,
+      "times_ms": [
+        15.054750023409724,
+        15.243707981426269,
+        15.259459032677114,
+        15.311709023080766,
+        15.314375050365925
+      ]
+    },
+    {
+      "model": "china-unet",
+      "precision": "fp32",
+      "compute": "FP32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": 1,
+      "picks": 7,
+      "median_ms": 15.779375040438026,
+      "p95_ms": 15.896974818315357,
+      "times_ms": [
+        15.913708019070327,
+        15.299958002287894,
+        15.700082993134856,
+        15.779375040438026,
+        15.830042015295476
+      ]
+    },
+    {
+      "model": "china-unet",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": 1,
+      "picks": 8,
+      "median_ms": 12.820874981116503,
+      "p95_ms": 13.244299567304552,
+      "times_ms": [
+        13.337290962226689,
+        12.820874981116503,
+        12.766875035595149,
+        12.872333987616003,
+        12.743958039209247
+      ]
+    }
+  ]
+}

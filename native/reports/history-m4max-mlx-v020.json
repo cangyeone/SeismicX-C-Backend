@@ -1,0 +1,86 @@
+{
+  "backend": "mlx",
+  "host": "M4-Max-local",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "input": "upstream public three-SAC E/N/Z example, 100 Hz, [3,N] float64",
+  "scope": "complete history call: sliding windows, internal preprocessing, raw probabilities, global min-heap NMS; GPU synchronized; 2 warmups then measured repeats",
+  "records": [
+    {
+      "model": "pnsn",
+      "precision": "fp32",
+      "compute": "FP32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 3,
+      "median_ms": 11.589458037633449,
+      "p95_ms": 12.984299601521343,
+      "times_ms": [
+        13.239833002444357,
+        11.962165997829288,
+        11.141958995722234,
+        10.326333984266967,
+        11.589458037633449
+      ]
+    },
+    {
+      "model": "pnsn",
+      "precision": "int8",
+      "compute": "W8A32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 3,
+      "median_ms": 11.068167048506439,
+      "p95_ms": 12.480050174053758,
+      "times_ms": [
+        11.602583050262183,
+        11.068167048506439,
+        12.699416955001652,
+        10.223707999102771,
+        9.802499960642308
+      ]
+    },
+    {
+      "model": "china-unet",
+      "precision": "fp32",
+      "compute": "FP32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 7,
+      "median_ms": 4.256333981174976,
+      "p95_ms": 4.924400011077523,
+      "times_ms": [
+        4.5415000058710575,
+        5.02012501237914,
+        4.155458009336144,
+        4.256333981174976,
+        4.136624978855252
+      ]
+    },
+    {
+      "model": "china-unet",
+      "precision": "int8",
+      "compute": "W8A32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 6,
+      "median_ms": 3.293916000984609,
+      "p95_ms": 3.699100634548813,
+      "times_ms": [
+        3.7518340395763516,
+        3.488167014438659,
+        3.2927500433288515,
+        3.2887079869396985,
+        3.293916000984609
+      ]
+    }
+  ]
+}

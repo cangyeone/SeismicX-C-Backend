@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "architecture": "china.unet.pt nearest-neighbor UNet, not standard PhaseNet",
+  "library": "native/build/libpnsn_cudnn.so",
+  "mlx": false,
+  "tests": [
+    "10 BN fusion",
+    "fixed 256/6144/10240",
+    "history arbitrary N=0/1/2/tail",
+    "batch 3, independent records/permutation/NMS",
+    "float64 DC/int32 extrema",
+    "empty/NaN/wrong window",
+    "real waveform/raw+diff/atomic capacity"
+  ],
+  "records": [
+    {
+      "model": "fp32",
+      "length": 256,
+      "batch": 3,
+      "max_error": 1.1920928955078125e-07,
+      "mean_error": 1.49305179331094e-10,
+      "single_vs_batch_max_error": 1.7462298274040222e-09
+    },
+    {
+      "model": "int8",
+      "length": 256,
+      "batch": 3,
+      "max_error": 0.00013947486877441406,
+      "mean_error": 2.8570357244461775e-06,
+      "single_vs_batch_max_error": 2.9103830456733704e-09
+    },
+    {
+      "model": "fp32",
+      "length": 6144,
+      "batch": 3,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 2.8097162374507434e-09,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "int8",
+      "length": 6144,
+      "batch": 3,
+      "max_error": 0.004710972309112549,
+      "mean_error": 6.652314914390445e-05,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "fp32",
+      "length": 10240,
+      "batch": 3,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 2.6997160063046977e-09,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "int8",
+      "length": 10240,
+      "batch": 3,
+      "max_error": 0.0067961812019348145,
+      "mean_error": 6.705928535666317e-05,
+      "single_vs_batch_max_error": 0.0
+    },
+    {
+      "model": "fp32",
+      "input": "real waveform",
+      "max_error": 1.0132789611816406e-06,
+      "mean_error": 4.7493569077516895e-09,
+      "history_picks": 25
+    },
+    {
+      "model": "int8",
+      "input": "real waveform",
+      "max_error": 0.0583394318819046,
+      "mean_error": 0.00021471825311891735,
+      "history_picks": 23
+    }
+  ]
+}

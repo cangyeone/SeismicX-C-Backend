@@ -1,0 +1,211 @@
+{
+  "status": "passed",
+  "tests": [
+    "planar history vs legacy interleaved",
+    "batch 1/3/5, L 128/6144/10240 vs independent single calls",
+    "float64 1e12 DC and int32 extrema",
+    "batch empty/NaN/wrong shape",
+    "batch permutation and real-signal independence",
+    "independent raw+diff NMS and atomic output capacity"
+  ],
+  "records": [
+    {
+      "precision": "fp32",
+      "length": 128,
+      "batch": 1,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.008415999822318554,
+        "network_ms": 1.0018240213394165,
+        "device_buffer_bytes": 19190748
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 128,
+      "batch": 3,
+      "max_error": 1.1920928955078125e-07,
+      "device_stats": {
+        "preprocess_ms": 0.007360000163316727,
+        "network_ms": 0.9585279822349548,
+        "device_buffer_bytes": 19242212
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 128,
+      "batch": 5,
+      "max_error": 1.1920928955078125e-07,
+      "device_stats": {
+        "preprocess_ms": 0.009279999881982803,
+        "network_ms": 0.9741759896278381,
+        "device_buffer_bytes": 19293676
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 128,
+      "batch": 1,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.009855999611318111,
+        "network_ms": 1.2261760234832764,
+        "device_buffer_bytes": 27760724
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 128,
+      "batch": 3,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.010688000358641148,
+        "network_ms": 1.2427200078964233,
+        "device_buffer_bytes": 27818364
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 128,
+      "batch": 5,
+      "max_error": 1.1920928955078125e-07,
+      "device_stats": {
+        "preprocess_ms": 0.010400000028312206,
+        "network_ms": 1.3163520097732544,
+        "device_buffer_bytes": 27876004
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 6144,
+      "batch": 1,
+      "max_error": 1.1920928955078125e-07,
+      "device_stats": {
+        "preprocess_ms": 0.012959999963641167,
+        "network_ms": 3.77292799949646,
+        "device_buffer_bytes": 20111196
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 6144,
+      "batch": 3,
+      "max_error": 1.1920928955078125e-07,
+      "device_stats": {
+        "preprocess_ms": 0.013567999936640263,
+        "network_ms": 3.7831358909606934,
+        "device_buffer_bytes": 22003556
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 6144,
+      "batch": 5,
+      "max_error": 2.384185791015625e-07,
+      "device_stats": {
+        "preprocess_ms": 0.013183999806642532,
+        "network_ms": 3.893728017807007,
+        "device_buffer_bytes": 23895916
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 6144,
+      "batch": 1,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.013567999936640263,
+        "network_ms": 4.263872146606445,
+        "device_buffer_bytes": 20611712
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 6144,
+      "batch": 3,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.01283199992030859,
+        "network_ms": 4.2961602210998535,
+        "device_buffer_bytes": 22799016
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 6144,
+      "batch": 5,
+      "max_error": 0.0010589361190795898,
+      "device_stats": {
+        "preprocess_ms": 0.01897599920630455,
+        "network_ms": 4.353504180908203,
+        "device_buffer_bytes": 24986320
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 10240,
+      "batch": 1,
+      "max_error": 1.1920928955078125e-07,
+      "device_stats": {
+        "preprocess_ms": 0.020031999796628952,
+        "network_ms": 5.713376045227051,
+        "device_buffer_bytes": 20737884
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 10240,
+      "batch": 3,
+      "max_error": 2.384185791015625e-07,
+      "device_stats": {
+        "preprocess_ms": 0.018112000077962875,
+        "network_ms": 5.793791770935059,
+        "device_buffer_bytes": 23883620
+      }
+    },
+    {
+      "precision": "fp32",
+      "length": 10240,
+      "batch": 5,
+      "max_error": 2.384185791015625e-07,
+      "device_stats": {
+        "preprocess_ms": 0.019328000023961067,
+        "network_ms": 6.120384216308594,
+        "device_buffer_bytes": 27029356
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 10240,
+      "batch": 1,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.020160000771284103,
+        "network_ms": 6.734784126281738,
+        "device_buffer_bytes": 21266800
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 10240,
+      "batch": 3,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.01926399953663349,
+        "network_ms": 6.5966081619262695,
+        "device_buffer_bytes": 24904088
+      }
+    },
+    {
+      "precision": "int8",
+      "length": 10240,
+      "batch": 5,
+      "max_error": 0.0,
+      "device_stats": {
+        "preprocess_ms": 0.01897599920630455,
+        "network_ms": 6.48956823348999,
+        "device_buffer_bytes": 28541376
+      }
+    }
+  ]
+}

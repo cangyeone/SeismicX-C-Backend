@@ -1,0 +1,88 @@
+{
+  "input": "pnsn-native/native/reports/real-waveform.npy",
+  "difference": false,
+  "repeats": 5,
+  "records": [
+    {
+      "backend": "c-cpu-fp32",
+      "length": 26001,
+      "picks": 3,
+      "cold_ms": 20.25050000520423,
+      "median_ms": 20.640209026169032,
+      "p95_ms": 20.69491680013016
+    },
+    {
+      "backend": "mlx-fp32",
+      "length": 26001,
+      "picks": 3,
+      "cold_ms": 18.12808297108859,
+      "median_ms": 4.731792025268078,
+      "p95_ms": 12.998724984936414
+    },
+    {
+      "backend": "c-cpu-int8",
+      "length": 26001,
+      "picks": 3,
+      "cold_ms": 14.753290975932032,
+      "median_ms": 14.874375017825514,
+      "p95_ms": 14.960066392086446
+    },
+    {
+      "backend": "mlx-int8",
+      "length": 26001,
+      "picks": 3,
+      "cold_ms": 18.15479196375236,
+      "median_ms": 5.005666986107826,
+      "p95_ms": 5.287749588023871
+    },
+    {
+      "backend": "upstream-jit-cpu",
+      "length": 26001,
+      "picks": 3,
+      "cold_ms": 88.05345796281472,
+      "median_ms": 13.21691699558869,
+      "p95_ms": 51.12613321980461
+    },
+    {
+      "backend": "c-cpu-fp32",
+      "length": 260010,
+      "picks": 31,
+      "cold_ms": 196.77887501893565,
+      "median_ms": 196.24795898562297,
+      "p95_ms": 198.48443319788203
+    },
+    {
+      "backend": "mlx-fp32",
+      "length": 260010,
+      "picks": 31,
+      "cold_ms": 63.584292016457766,
+      "median_ms": 45.7535830209963,
+      "p95_ms": 46.302066813223064
+    },
+    {
+      "backend": "c-cpu-int8",
+      "length": 260010,
+      "picks": 31,
+      "cold_ms": 140.99862502189353,
+      "median_ms": 143.44491600058973,
+      "p95_ms": 145.44483300996944
+    },
+    {
+      "backend": "mlx-int8",
+      "length": 260010,
+      "picks": 31,
+      "cold_ms": 61.349374998826534,
+      "median_ms": 48.28445799648762,
+      "p95_ms": 49.01046701706946
+    },
+    {
+      "backend": "upstream-jit-cpu",
+      "length": 260010,
+      "picks": 31,
+      "cold_ms": 462.6230000285432,
+      "median_ms": 471.91983298398554,
+      "p95_ms": 473.83395043434575
+    }
+  ],
+  "comparison": "Legacy uses float32 mean, clamps indices to N-2 and creates ceil(N/9216) windows. Native uses float64 mean, pads by final sample, stops once covered and clips to true length. Timing comparison is not an exact equivalence test."
+}

@@ -1,0 +1,117 @@
+{
+  "status": "passed",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "cudnn_version": 91002,
+  "records": [
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 128,
+      "batch": 1,
+      "max_probability_error": 2.384185791015625e-07
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 128,
+      "batch": 3,
+      "max_probability_error": 2.384185791015625e-07
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 6144,
+      "batch": 1,
+      "max_probability_error": 5.960464477539062e-07
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 6144,
+      "batch": 3,
+      "max_probability_error": 1.5497207641601562e-06
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 10240,
+      "batch": 1,
+      "max_probability_error": 1.2516975402832031e-06
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "length": 10240,
+      "batch": 3,
+      "max_probability_error": 1.1324882507324219e-06
+    },
+    {
+      "model": "fp32",
+      "compute": "FP32",
+      "input": "public real waveform",
+      "batch": 3,
+      "max_probability_error": 2.86102294921875e-06
+    },
+    {
+      "model": "fp32",
+      "reference": "original unfused checkpoint",
+      "batch": 3,
+      "max_probability_error": 8.940696716308594e-07
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "length": 128,
+      "batch": 1,
+      "max_probability_error": 1.1920928955078125e-07
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "length": 128,
+      "batch": 3,
+      "max_probability_error": 2.384185791015625e-07
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "length": 6144,
+      "batch": 1,
+      "max_probability_error": 4.76837158203125e-07
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "length": 6144,
+      "batch": 3,
+      "max_probability_error": 1.0132789611816406e-06
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "length": 10240,
+      "batch": 1,
+      "max_probability_error": 5.960464477539062e-07
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "length": 10240,
+      "batch": 3,
+      "max_probability_error": 1.0132789611816406e-06
+    },
+    {
+      "model": "int8",
+      "compute": "FP32",
+      "input": "public real waveform",
+      "batch": 3,
+      "max_probability_error": 2.954155206680298e-06
+    },
+    {
+      "model": "int8",
+      "reference": "original unfused checkpoint",
+      "batch": 3,
+      "max_probability_error": 0.019300341606140137
+    }
+  ]
+}

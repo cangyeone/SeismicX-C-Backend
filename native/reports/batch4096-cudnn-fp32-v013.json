@@ -1,0 +1,64 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "batch": 4096,
+  "length": 10240,
+  "seed": 20261014,
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,5,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "cudnn",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 0.5516928060096689,
+      "seconds": [
+        0.26524096401408315,
+        0.2617229580064304,
+        0.2631441950215958,
+        0.2615000730147585,
+        0.2633800180046819
+      ],
+      "median_seconds": 0.2631441950215958,
+      "p95_seconds": 0.2648687748122029,
+      "windows_per_second": 15565.610328830731,
+      "signal_hours_per_second": 442.75513824229637,
+      "single_vs_batch_max_error": 2.384185791015625e-07,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "network_gpu_seconds": [
+        0.10430290985107422,
+        0.10389107513427734,
+        0.10558783721923828,
+        0.10454121398925781,
+        0.10540092468261719
+      ],
+      "network_gpu_median_seconds": 0.10454121398925781,
+      "preprocess_gpu_seconds": [
+        0.0028830399513244628,
+        0.0028757760524749758,
+        0.0028870398998260497,
+        0.0029194560050964354,
+        0.002883104085922241
+      ],
+      "preprocess_gpu_median_seconds": 0.002883104085922241,
+      "preprocess_ms": 2.883104085922241,
+      "network_ms": 105.40092468261719,
+      "device_buffer_bytes": 6461632344
+    },
+    {
+      "backend": "cudnn",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 0.3288507800316438,
+      "windows_per_second": 12455.497291524931,
+      "picks": 48,
+      "repeats": 1
+    }
+  ]
+}

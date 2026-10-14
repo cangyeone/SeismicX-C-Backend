@@ -1,0 +1,57 @@
+{
+  "host": "M4-Max-local",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "batch": 4096,
+  "length": 10240,
+  "seed": 20261014,
+  "model": "china-unet",
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,3,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "cpu",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 22.291097957990132,
+      "seconds": [
+        22.320259457977954,
+        22.311755917035043,
+        22.31077754200669
+      ],
+      "median_seconds": 22.311755917035043,
+      "p95_seconds": 22.319409103883665,
+      "windows_per_second": 183.5803517764687,
+      "signal_hours_per_second": 5.221841117197332,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "batch_execution": "SIMD CPU fallback processes records serially",
+      "cpu_features": "ARM NEON + DOTPROD int8 / NEON fp32",
+      "threads": 1
+    },
+    {
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "int8",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 18.645070041995496,
+      "seconds": [
+        18.6468256249791,
+        18.680686458013952,
+        18.56988187500974
+      ],
+      "median_seconds": 18.6468256249791,
+      "p95_seconds": 18.677300374710466,
+      "windows_per_second": 219.66205306886334,
+      "signal_hours_per_second": 6.248165065069891,
+      "single_vs_batch_max_error": 0.0,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "batch_execution": "SIMD CPU fallback processes records serially",
+      "cpu_features": "ARM NEON + DOTPROD int8 / NEON fp32",
+      "threads": 1
+    }
+  ]
+}

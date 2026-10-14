@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "cpu_features": "x86 AVX2 int8 / SSE fp32",
+  "tests": [
+    "100 randomized exact-NMS comparisons with duplicate times and tied scores",
+    "BN fusion, fixed windows 128/6144/10240 and probability simplex",
+    "arbitrary length 0/1/2/tail boundaries; no picks outside true length",
+    "constant channels, int32 extrema, nonfinite rejection and huge float64 DC offsets",
+    "candidate memory limit fails explicitly",
+    "real three-component waveform, full 26001-sample trace",
+    "raw plus first-difference ensemble with shared heap suppression",
+    "strict truncated/corrupted/trailing model rejection"
+  ],
+  "numerical": [
+    {
+      "backend": "c",
+      "precision": "fp32",
+      "length": 128,
+      "max_error": 1.1920928955078125e-07,
+      "mean_error": 7.336061758067558e-10
+    },
+    {
+      "backend": "c",
+      "precision": "int8",
+      "length": 128,
+      "max_error": 0.00048178061842918396,
+      "mean_error": 2.538842636568006e-05
+    },
+    {
+      "backend": "c",
+      "precision": "fp32",
+      "length": 6144,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 2.666187493005623e-09
+    },
+    {
+      "backend": "c",
+      "precision": "int8",
+      "length": 6144,
+      "max_error": 0.005277693271636963,
+      "mean_error": 0.00011819566861959174
+    },
+    {
+      "backend": "c",
+      "precision": "fp32",
+      "length": 10240,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 4.5253445435378126e-09
+    },
+    {
+      "backend": "c",
+      "precision": "int8",
+      "length": 10240,
+      "max_error": 0.0020620012655854225,
+      "mean_error": 0.00013340292207431048
+    }
+  ]
+}

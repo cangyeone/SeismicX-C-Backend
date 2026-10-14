@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "cpu_features": "ARM NEON + DOTPROD int8 / NEON fp32",
+  "tests": [
+    "100 randomized exact-NMS comparisons with duplicate times and tied scores",
+    "BN fusion, fixed windows 128/6144/10240 and probability simplex",
+    "arbitrary length 0/1/2/tail boundaries; no picks outside true length",
+    "constant channels, int32 extrema, nonfinite rejection and huge float64 DC offsets",
+    "candidate memory limit fails explicitly",
+    "repeated real-waveform MLX fixed/long picks, high-amplitude Metal states",
+    "real three-component waveform, full 26001-sample trace",
+    "raw plus first-difference ensemble with shared heap suppression",
+    "strict truncated/corrupted/trailing model rejection"
+  ],
+  "numerical": [
+    {
+      "backend": "c",
+      "precision": "fp32",
+      "length": 128,
+      "max_error": 1.1920928955078125e-07,
+      "mean_error": 6.162715893154314e-10
+    },
+    {
+      "backend": "mlx",
+      "precision": "fp32",
+      "length": 128,
+      "max_error": 1.1920928955078125e-07,
+      "mean_error": 7.466541829259654e-10
+    },
+    {
+      "backend": "c",
+      "precision": "int8",
+      "length": 128,
+      "max_error": 0.0009456872940063477,
+      "mean_error": 3.57413555320818e-05
+    },
+    {
+      "backend": "mlx",
+      "precision": "int8",
+      "length": 128,
+      "max_error": 0.0004817536100745201,
+      "mean_error": 2.5386654670001008e-05
+    },
+    {
+      "backend": "c",
+      "precision": "fp32",
+      "length": 6144,
+      "max_error": 1.1920928955078125e-07,
+      "mean_error": 1.781603531370024e-09
+    },
+    {
+      "backend": "mlx",
+      "precision": "fp32",
+      "length": 6144,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 2.1913917347404777e-09
+    },
+    {
+      "backend": "c",
+      "precision": "int8",
+      "length": 6144,
+      "max_error": 0.004609107971191406,
+      "mean_error": 0.0001208186658914201
+    },
+    {
+      "backend": "mlx",
+      "precision": "int8",
+      "length": 6144,
+      "max_error": 0.005277454853057861,
+      "mean_error": 0.00011819547944469377
+    },
+    {
+      "backend": "c",
+      "precision": "fp32",
+      "length": 10240,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 2.194695536417157e-09
+    },
+    {
+      "backend": "mlx",
+      "precision": "fp32",
+      "length": 10240,
+      "max_error": 2.384185791015625e-07,
+      "mean_error": 3.4954987793156533e-09
+    },
+    {
+      "backend": "c",
+      "precision": "int8",
+      "length": 10240,
+      "max_error": 0.0019297003746032715,
+      "mean_error": 0.00017223959730472416
+    },
+    {
+      "backend": "mlx",
+      "precision": "int8",
+      "length": 10240,
+      "max_error": 0.0020619453862309456,
+      "mean_error": 0.00013340164150577039
+    }
+  ]
+}

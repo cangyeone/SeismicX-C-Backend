@@ -1,0 +1,76 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "torch": "2.8.0+cu128",
+  "batch": 4096,
+  "length": 10240,
+  "repeats": 5,
+  "tf32": false,
+  "input": "distinct seeded float32 records [B,3,T] on GPU; 100 Hz interpretation",
+  "timing": "synchronized wall clock; excludes generation/model loading/NMS; resident stages exclude transfers, host stage includes H2D/D2H and GPU float64 normalization",
+  "records": [
+    {
+      "backend": "torch-cuda",
+      "precision": "fp32",
+      "stage": "network_gpu_resident",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 0.4134104959666729,
+      "seconds": [
+        0.13353756902506575,
+        0.13373490195954219,
+        0.13374389900127426,
+        0.13367616798495874,
+        0.13382297701900825
+      ],
+      "median_seconds": 0.13373490195954219,
+      "p95_seconds": 0.13380716141546145,
+      "windows_per_second": 30627.756404525815,
+      "signal_hours_per_second": 871.1895155065121,
+      "peak_allocated_bytes": 5051782144,
+      "peak_reserved_bytes": 12383682560
+    },
+    {
+      "backend": "torch-cuda",
+      "precision": "fp32",
+      "stage": "float64_preprocess_and_network_gpu_resident",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 0.2756390559952706,
+      "seconds": [
+        0.14300176303368062,
+        0.14293626399012282,
+        0.14290173701010644,
+        0.14286058902507648,
+        0.14281437499448657
+      ],
+      "median_seconds": 0.14290173701010644,
+      "p95_seconds": 0.14298866322496906,
+      "windows_per_second": 28663.05256814561,
+      "signal_hours_per_second": 815.3046063828085,
+      "peak_allocated_bytes": 7568364544,
+      "peak_reserved_bytes": 14564720640
+    },
+    {
+      "backend": "torch-cuda",
+      "precision": "fp32",
+      "stage": "raw_host_to_host_probabilities",
+      "batch": 4096,
+      "length": 10240,
+      "cold_seconds": 0.47843701601959765,
+      "seconds": [
+        0.2918626119499095,
+        0.29197642201324925,
+        0.29193330398993567,
+        0.29149219702230766,
+        0.30620816198643297
+      ],
+      "median_seconds": 0.29193330398993567,
+      "p95_seconds": 0.30336181399179624,
+      "windows_per_second": 14030.602004015303,
+      "signal_hours_per_second": 399.0926792253242,
+      "peak_allocated_bytes": 7568364544,
+      "peak_reserved_bytes": 14564720640
+    }
+  ]
+}

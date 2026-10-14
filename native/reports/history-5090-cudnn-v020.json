@@ -1,0 +1,86 @@
+{
+  "backend": "cudnn",
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "input": "upstream public three-SAC E/N/Z example, 100 Hz, [3,N] float64",
+  "scope": "complete history call: sliding windows, internal preprocessing, raw probabilities, global min-heap NMS; GPU synchronized; 2 warmups then measured repeats",
+  "records": [
+    {
+      "model": "pnsn",
+      "precision": "fp32",
+      "compute": "FP32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 3,
+      "median_ms": 17.910221009515226,
+      "p95_ms": 18.264762382023036,
+      "times_ms": [
+        17.910221009515226,
+        18.116447958163917,
+        17.880300991237164,
+        17.871347023174167,
+        18.301840987987816
+      ]
+    },
+    {
+      "model": "pnsn",
+      "precision": "int8",
+      "compute": "Q8 storage / FP32 compute",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 3,
+      "median_ms": 18.134773010388017,
+      "p95_ms": 18.322181119583547,
+      "times_ms": [
+        18.34711991250515,
+        18.003862001933157,
+        18.134773010388017,
+        18.130099051631987,
+        18.222425947897136
+      ]
+    },
+    {
+      "model": "china-unet",
+      "precision": "fp32",
+      "compute": "FP32",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 7,
+      "median_ms": 2.662405022419989,
+      "p95_ms": 2.688225032761693,
+      "times_ms": [
+        2.6899160584434867,
+        2.662405022419989,
+        2.6814609300345182,
+        2.6486690621823072,
+        2.613091957755387
+      ]
+    },
+    {
+      "model": "china-unet",
+      "precision": "int8",
+      "compute": "Q8 storage / FP32 compute",
+      "samples": 26001,
+      "window": 10240,
+      "overlap": 1024,
+      "threads": null,
+      "picks": 6,
+      "median_ms": 2.6866599218919873,
+      "p95_ms": 2.7333991834893823,
+      "times_ms": [
+        2.6674639666453004,
+        2.6866599218919873,
+        2.7144920313730836,
+        2.738125971518457,
+        2.6671120431274176
+      ]
+    }
+  ]
+}
