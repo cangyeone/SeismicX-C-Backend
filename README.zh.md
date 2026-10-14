@@ -8,6 +8,7 @@ SeismicX品牌的C11震相拾取后端，已适配PNSN v3及现有 `china.unet.p
 
 - [中文使用与C/Python接口](native/README.zh.md)
 - [两个模型在全部已测试设备上的完整速度矩阵](native/reports/DEVICE_MATRIX.md)：M4 Max CPU/MLX、3955WX CPU、RTX5090cuDNN；单条、实际B4096批次、完整历史/实时拾取和内存。
+- [6144点近实时容量](native/reports/REALTIME6144.md)：4096台完整拾取实测，CPU多context并行、CUDA以及10/30秒周期容量预算。
 - [China UNet结构、8位数值与标签评估](native/reports/PHASENET.md)
 - [PNSN cuDNN INT8与CPU评估](native/reports/INT8_CPU.md)
 - [来源与权重说明](NOTICE.md)，[GPLv3许可证](LICENSE)

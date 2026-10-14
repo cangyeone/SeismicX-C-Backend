@@ -1,0 +1,157 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "seed": 20261014,
+  "input": "4096 independently selected windows from upstream public SAC E/N/Z example plus 0.5% channel-std noise; raw float32 [B,3,L]",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "batch": 4096,
+  "length": 6144,
+  "reference_sampling_rate_hz": 100,
+  "scope": "Complete raw host input to independent picks, includes internal preprocessing, model inference, min-heap NMS, GPU transfers/synchronization and CPU pool submission; excludes loading/data generation/validation; persistent contexts and pool; each CPU worker has its own context with threads=1",
+  "records": [
+    {
+      "model": "pnsn",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 1,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        33.37117504805792,
+        33.56059174891561,
+        33.40098665293772
+      ],
+      "picks": 4461,
+      "median_seconds": 33.40098665293772,
+      "p95_seconds": 33.54463123931782,
+      "windows_per_second": 122.63110795380484,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "model": "pnsn",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 16,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        2.744087581988424,
+        2.8386611100286245,
+        2.8541101739974692
+      ],
+      "picks": 4461,
+      "median_seconds": 2.8386611100286245,
+      "p95_seconds": 2.8525652676005846,
+      "windows_per_second": 1442.933778015755,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "model": "pnsn",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 32,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        1.7661848480347544,
+        1.7413384790997952,
+        1.740415405947715
+      ],
+      "picks": 4461,
+      "median_seconds": 1.7413384790997952,
+      "p95_seconds": 1.7637002111412585,
+      "windows_per_second": 2352.2135697118883,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 1,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        21.10302891302854,
+        21.124577835085802,
+        21.107262361911125
+      ],
+      "picks": 6439,
+      "median_seconds": 21.107262361911125,
+      "p95_seconds": 21.122846287768333,
+      "windows_per_second": 194.05643089893985,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 16,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        1.95387731899973,
+        1.9179739729734138,
+        1.9461039559682831
+      ],
+      "picks": 6439,
+      "median_seconds": 1.9461039559682831,
+      "p95_seconds": 1.9530999826965854,
+      "windows_per_second": 2104.71798664118,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 32,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        1.6210719350492582,
+        1.2030794729944319,
+        1.2254976220428944
+      ],
+      "picks": 6439,
+      "median_seconds": 1.2254976220428944,
+      "p95_seconds": 1.5815145037486218,
+      "windows_per_second": 3342.315746946944,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ]
+    }
+  ]
+}

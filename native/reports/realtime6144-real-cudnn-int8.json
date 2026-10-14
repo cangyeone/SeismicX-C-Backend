@@ -1,0 +1,71 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "seed": 20261014,
+  "input": "4096 independently selected windows from upstream public SAC E/N/Z example plus 0.5% channel-std noise; raw float32 [B,3,L]",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "batch": 4096,
+  "length": 6144,
+  "reference_sampling_rate_hz": 100,
+  "scope": "Complete raw host input to independent picks, includes internal preprocessing, model inference, min-heap NMS, GPU transfers/synchronization and CPU pool submission; excludes loading/data generation/validation; persistent contexts and pool; each CPU worker has its own context with threads=1",
+  "records": [
+    {
+      "model": "pnsn",
+      "backend": "cudnn_int8",
+      "precision": "int8",
+      "compute": "conv W8A8 / LSTM FP32",
+      "workers": 1,
+      "threads_per_context": null,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        0.27697269804775715,
+        0.2773585559334606,
+        0.28151412308216095,
+        0.28150956297758967,
+        0.27521988505031914
+      ],
+      "picks": 4490,
+      "median_seconds": 0.2773585559334606,
+      "p95_seconds": 0.2815132110612467,
+      "windows_per_second": 14767.88767598951,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ],
+      "preprocess_ms": 1.7552640438079834,
+      "network_ms": 59.42611312866211,
+      "device_buffer_bytes": 4499116652
+    },
+    {
+      "model": "china-unet",
+      "backend": "cudnn_int8",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 1,
+      "threads_per_context": null,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        0.29176102695055306,
+        0.2926146490499377,
+        0.29184041591361165,
+        0.2920882300240919,
+        0.29191050701774657
+      ],
+      "picks": 6439,
+      "median_seconds": 0.29191050701774657,
+      "p95_seconds": 0.29250936524476856,
+      "windows_per_second": 14031.697734508014,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ],
+      "preprocess_ms": 1.754304051399231,
+      "network_ms": 148.6248016357422,
+      "device_buffer_bytes": 5817331212
+    }
+  ]
+}

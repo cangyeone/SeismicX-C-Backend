@@ -71,6 +71,8 @@ with Picker('native/models/china-unet-int8.bin',
 
 [Device matrix](native/reports/DEVICE_MATRIX.md) compares every model on the available M4 Max CPU, M4 Max MLX GPU, Threadripper 3955WX CPU and RTX5090 cuDNN GPU. Tests include actual `4096×3×10240` batches, 6144/10240 single-window latency, and complete picks. Timings, precision and thread counts are recorded rather than inferred from language or model file size.
 
+[Near-real-time capacity](native/reports/REALTIME6144.md) measures complete picking for `4096×3×6144`, including CPU context pools and cuDNN. It separates measured batch latency from extrapolated 10/30-second station capacity and memory limits.
+
 [China UNet results](native/reports/PHASENET.md) and [PNSN INT8/CPU results](native/reports/INT8_CPU.md) report numerical drift and held-out label comparisons. Original FP32 predictions are preserved within floating point tolerance; quantization changes some predictions. Accuracy is evaluated on the stated test cache and thresholds, with its phase-label coverage documented.
 
 CPU portability CI covers Linux/macOS/Windows and shared/static builds. CUDA and MLX were tested on the hardware listed above; other GPUs and physical ARM edge boards have not been benchmarked. For edge builds use `-DBUILD_SHARED_LIBS=OFF -DPNSN_OPENMP=OFF`, a smaller supported window such as 6144, and an explicit candidate budget.

@@ -1,0 +1,65 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "batch": 4096,
+  "length": 6144,
+  "seed": 20261014,
+  "model": "pnsn",
+  "input": "4096 distinct seeded float32 records, [B,3,L]",
+  "output": "probabilities [B,5,L], picks independently NMS per record",
+  "timing": "synchronized wall clock; generation/model loading/validation excluded; first run cold, then measured repeats; CPU serial fallback clearly identified",
+  "records": [
+    {
+      "backend": "cudnn",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 6144,
+      "cold_seconds": 0.4857678689295426,
+      "seconds": [
+        0.16263300296850502,
+        0.1577741779619828,
+        0.15776050102431327,
+        0.15640750399325043,
+        0.18254800303839147
+      ],
+      "median_seconds": 0.1577741779619828,
+      "p95_seconds": 0.17856500302441417,
+      "windows_per_second": 25961.155703102257,
+      "signal_hours_per_second": 443.07039066627857,
+      "single_vs_batch_max_error": 2.384185791015625e-07,
+      "scope": "raw host input to host probabilities, includes preprocessing, GPU H2D/D2H (CUDA), allocation, no NMS",
+      "network_gpu_seconds": [
+        0.06292268753051758,
+        0.062093921661376957,
+        0.06223830413818359,
+        0.0614119987487793,
+        0.08636924743652344
+      ],
+      "network_gpu_median_seconds": 0.06223830413818359,
+      "preprocess_gpu_seconds": [
+        0.0017578239440917969,
+        0.0017517119646072387,
+        0.0017742079496383667,
+        0.001753056049346924,
+        0.0018123840093612672
+      ],
+      "preprocess_gpu_median_seconds": 0.0017578239440917969,
+      "preprocess_ms": 1.812384009361267,
+      "network_ms": 86.36924743652344,
+      "device_buffer_bytes": 3894718296
+    },
+    {
+      "backend": "cudnn",
+      "precision": "fp32",
+      "compute": "fp32",
+      "batch": 4096,
+      "length": 6144,
+      "stage": "raw_host_to_independent_picks",
+      "seconds": 0.25076128798536956,
+      "windows_per_second": 16334.259697369944,
+      "picks": 115,
+      "repeats": 1
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "host": "3955WX-RTX5090-server",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31",
+  "seed": 20261014,
+  "input": "4096 independently selected windows from upstream public SAC E/N/Z example plus 0.5% channel-std noise; raw float32 [B,3,L]",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "batch": 4096,
+  "length": 6144,
+  "reference_sampling_rate_hz": 100,
+  "scope": "Complete raw host input to independent picks, includes internal preprocessing, model inference, min-heap NMS, GPU transfers/synchronization and CPU pool submission; excludes loading/data generation/validation; persistent contexts and pool; each CPU worker has its own context with threads=1",
+  "records": [
+    {
+      "model": "pnsn",
+      "backend": "cudnn",
+      "precision": "fp32",
+      "compute": "FP32",
+      "workers": 1,
+      "threads_per_context": null,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        0.29093773709610105,
+        0.2919552610255778,
+        0.2890788549557328,
+        0.29176535992883146,
+        0.28562874300405383
+      ],
+      "picks": 4523,
+      "median_seconds": 0.29093773709610105,
+      "p95_seconds": 0.29191728080622853,
+      "windows_per_second": 14078.613661063262,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ],
+      "preprocess_ms": 1.7526079416275024,
+      "network_ms": 62.299198150634766,
+      "device_buffer_bytes": 3894718296
+    },
+    {
+      "model": "china-unet",
+      "backend": "cudnn",
+      "precision": "fp32",
+      "compute": "FP32",
+      "workers": 1,
+      "threads_per_context": null,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        0.19201348908245564,
+        0.19559077906887978,
+        0.1937023459468037,
+        0.19165343104396015,
+        0.1914852859918028
+      ],
+      "picks": 6513,
+      "median_seconds": 0.19201348908245564,
+      "p95_seconds": 0.19521309244446455,
+      "windows_per_second": 21331.834651684654,
+      "independent_picks_equal": [
+        true,
+        true,
+        true
+      ],
+      "preprocess_ms": 1.752832055091858,
+      "network_ms": 44.09695816040039,
+      "device_buffer_bytes": 9074099920
+    }
+  ]
+}

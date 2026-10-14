@@ -1,0 +1,127 @@
+{
+  "host": "M4-Max-local",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "seed": 20261014,
+  "input": "4096 independently selected windows from upstream public SAC E/N/Z example plus 0.5% channel-std noise; raw float32 [B,3,L]",
+  "input_sha256": "a5fdec06064681ab58e63559265c85f2999beb5f5899cb07f21d86f30c220c4c",
+  "batch": 4096,
+  "length": 6144,
+  "reference_sampling_rate_hz": 100,
+  "scope": "Complete raw host input to independent picks, includes internal preprocessing, model inference, min-heap NMS, GPU transfers/synchronization and CPU pool submission; excludes loading/data generation/validation; persistent contexts and pool; each CPU worker has its own context with threads=1",
+  "records": [
+    {
+      "model": "pnsn",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 1,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        12.45542104204651,
+        12.463284458965063,
+        12.49669374997029
+      ],
+      "picks": 4459,
+      "median_seconds": 12.463284458965063,
+      "p95_seconds": 12.493352820869768,
+      "windows_per_second": 328.6453112328407
+    },
+    {
+      "model": "pnsn",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 8,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        1.575936958019156,
+        1.577231583010871,
+        1.5968775830115192
+      ],
+      "picks": 4459,
+      "median_seconds": 1.577231583010871,
+      "p95_seconds": 1.5949129830114543,
+      "windows_per_second": 2596.9553514651934
+    },
+    {
+      "model": "pnsn",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 16,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        1.0454352090018801,
+        1.0561029160162434,
+        1.1308756670332514
+      ],
+      "picks": 4459,
+      "median_seconds": 1.0561029160162434,
+      "p95_seconds": 1.1233983919315507,
+      "windows_per_second": 3878.4098953638354
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 1,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        11.393128458992578,
+        11.376619459013455,
+        11.392803249997087
+      ],
+      "picks": 6438,
+      "median_seconds": 11.392803249997087,
+      "p95_seconds": 11.39309593809303,
+      "windows_per_second": 359.52521167264496
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 8,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        1.4551878750207834,
+        1.4598811659961939,
+        1.4695724170305766
+      ],
+      "picks": 6438,
+      "median_seconds": 1.4598811659961939,
+      "p95_seconds": 1.4686032919271383,
+      "windows_per_second": 2805.7078174612734
+    },
+    {
+      "model": "china-unet",
+      "backend": "cpu",
+      "precision": "int8",
+      "compute": "W8A8 GEMM / float activations",
+      "workers": 16,
+      "threads_per_context": 1,
+      "batch": 4096,
+      "length": 6144,
+      "seconds": [
+        0.9582670840318315,
+        0.9376345829805359,
+        0.9571578329778276
+      ],
+      "picks": 6438,
+      "median_seconds": 0.9571578329778276,
+      "p95_seconds": 0.9581561589264311,
+      "windows_per_second": 4279.336028893871
+    }
+  ]
+}
